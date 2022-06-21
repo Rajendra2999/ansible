@@ -84,6 +84,7 @@ ansible demo -m setup
 ansible demo -m setup -a "filter=*ipv4*"
 
 playbook 
+
 vi target.yml
 
 --- #my 1st target.yml playbook
