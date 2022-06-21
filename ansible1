@@ -1,0 +1,80 @@
+yum update -y
+wget https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm
+yum install epel-release-latest-7.noarch.rpm
+yum update -y
+yum install git python python-devel python-pip openssl ansible -y
+ansible --version
+
+______________________________
+vi /etc/ansible/hosts
+
+[demo]
+node1****IP
+_:wq_________________________________
+vi /etc/ansible/ansible.cfg
+
+uncommented   (inventry   ,  
+                       sudo-user = root)
+:wq
+___________________________________________
+useradd ansible
+passwd ansible
+_________________________________________
+visudo
+uncomented   
+          [ root ALL = (ALL)  ALL ]
+		  ansible ALL = (ALL)  NOPASSWD: ALL
+:wq		  
+_________________________________________
+
+node1 same command  ----------  node1  --------
+su ansible
+sudo yum install httpd -y
+
+
+_________________________________________
+
+vi /etc/ssh/sshd_config
+uncommented
+    PermitRootLogin yes
+    password athentication yes
+commented
+	#password athentication no	   
+	
+:wq
+___________________________________________
+
+
+service sshd restart
+
+node1 same command  ----------  node1  --------
+
+
+su ansible
+ssh-keygen
+la -a
+cd .ssh
+ssh-copy-id ansible@----ip node1-------
+
+cd ..
+
+ssh --------ip node1-------
+
+ansible all --list-host
+ansible demo --list-host
+ansible demo[0] --list-host
+ansible demo[1] --list-host
+ansible demo[-1] --list-host
+ansible demo[0:1] --list-host
+
+add hok command
+
+ansible demo -a "ls"
+ansible all -a "ls"
+
+ansible all -a "touch file"
+ansible demo -a "sudo yum install httpd"
+ansible demo -ba "yum install httpd"
+
+
+module
