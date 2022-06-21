@@ -222,7 +222,4 @@ ansible-vault edit vault.yml
 Vault password: ***
 
 :wq
-----------------------------------------------------------
-ok this is all about it 
-123
-ffff
+
