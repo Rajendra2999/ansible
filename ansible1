@@ -78,3 +78,5 @@ ansible demo -ba "yum install httpd"
 
 
 module
+ ansible demo -b -m yum -a "pkg=httpd state=present"
+ ansible demo -b -m yum -a "pkg=httpd state=absent"
