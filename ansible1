@@ -85,3 +85,11 @@ ansible demo -m setup -a "filter=*ipv4*"
 
 playbook 
 vi target.yml
+
+--- #my 1st target.yml playbook
+- hosts: demo
+  user: ansible
+  become: yes
+  connection: ssh
+  gather_facts: yes
+:wq
