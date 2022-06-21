@@ -82,3 +82,5 @@ module
  ansible demo -b -m yum -a "pkg=httpd state=absent"
 ansible demo -m setup
 ansible demo -m setup -a "filter=*ipv4*"
+
+playbook 
