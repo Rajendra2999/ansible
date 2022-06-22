@@ -1,0 +1,42 @@
+
+vpc
+ mumvpc--pubsub/prisub---igw-internetgatway----rtb--subnet associate
+
+ec2
+	launch configuration--
+
+      ami-08df646e18b182346
+
+        #!/bin/bash
+		yum install httpd -y
+		systemctl start httpd
+		systemctl enable httpd
+		echo "<h1>HELLO World,$HOSTNAME this is my home page"> /var/www/html/index.html
+
+		#!/bin/bash
+		yum install httpd -y
+		systemctl start httpd
+		systemctl enable httpd
+		mkdir /var/www/html/laptop
+		echo "<h1>HELLO World,$HOSTNAME this is my Laptop page"> /var/www/html/laptop/index.html
+
+		#!/bin/bash
+		yum install httpd -y
+		systemctl start httpd
+		systemctl enable httpd
+		mkdir /var/www/html/mobile
+		echo "<h1>HELLO World,$HOSTNAME this is my mobile page"> /var/www/html/mobile/index.html
+
+	autoscaling create
+					autometic scaling 
+						static 
+						dynamic
+						scheduled action configure
+	target group
+					target assigned
+	
+	Load Balancers
+					create Load Balancers
+					listener port assigned
+					edit rule
+					
