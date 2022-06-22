@@ -9,8 +9,6 @@ Customer gateways
 Site-to-Site VPN Connections
 
 
-
-
 1.  Commands for Installation of Openswan
     i. Change to root user: 
                 $ sudo su
